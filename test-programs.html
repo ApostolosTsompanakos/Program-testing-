@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The input element</h1>
+    <p> Username <input type="text" id="name"><br>
+        <br>
+        Password <input type="text" id="password"></p>
+        <br>
+    <script>
+        //function 1: calculates the average number from 10 numbers  user has put.
+        function myFunction(){
+            let sum = 0 ;
+            
+            let result;
+            
+            for(let i=0;i<10;i++){
+              let num = prompt("give num");
+              sum+=parseInt(num);
+            }
+            result=sum/10;
+            console.log(result);
+             
+            }
+            //function 2: checks if the username and password is true or false.
+            function myFunction2(){
+                let username = document.getElementById("name").value;
+                let password = document.getElementById("password").value;
+                let loggedIn = false; 
+                if(username === "diek"){
+                    loggedIn = true;
+                }
+                else{
+                    loggedIn=false;
+                }
+                if(password === "123"){
+                    loggedIn=true;
+                }
+                else{
+                    loggedIn=false;
+                }
+            
+                
+                if(loggedIn){
+                    console.log("logged in!");
+                }
+                else{
+                    console.log("something went wrong :(");
+                }
+                 
+            }
+                //function getRandomInt(): it generates a rundom number and  returns it using the math.floor and math.ceil method.
+                function getRandomInt(min,max){
+                    let x;
+                    let win=false;
+                    max=Math.floor(max);
+                    min=Math.ceil(min);
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
+                //function myGame(): Using the getRandomInt() function we can set the length of numbers we want to generate the number from . And gives the user 3 chances to guess it right. 
+                function myGame(){
+
+                
+                    var randomInt = getRandomInt(1, 3);
+                    
+                    for(let i=0;i<3;i++){
+                        x=prompt("please enter a number");
+                    
+                    let y=parseInt(x);
+                    if(y!== randomInt){
+                        win=false;
+                    }
+                    else{
+                        win=true;
+                        break;
+                    }
+                }
+                     if(win){
+                        console.log("you won");
+                     }
+                     else{
+                        console.log("you lose");
+                     }
+
+                }
+
+              
+
+
+                
+
+
+
+    </script>
+    <br>
+    <button onclick="myFunction()">click me!</button>
+    <button onclick="myFunction2()">click me!</button>
+    <button onclick="myGame()">click me!</button>
+    <button onclick="main()">click me!</button>
+</body>
+</html>
